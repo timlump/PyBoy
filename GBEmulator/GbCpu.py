@@ -31,6 +31,7 @@ class GbCpu:
 
     def _decode(self,opcode,pc):
         if opcode == 0xCB:
+            self._r[pc] = pc+1
             newOpcode = self._m[pc+1]
             return self._cb[newOpcode]
         else:
