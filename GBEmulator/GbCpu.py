@@ -24,8 +24,6 @@ class GbCpu:
             opcode = self._fetch()
             instruction,params = self._decode(opcode)
             self._execute(instruction,params)
-            if instruction != None:
-                self._wait(sTime,instruction.cycles)
 
     def reset(self):
         self._r.reset()
